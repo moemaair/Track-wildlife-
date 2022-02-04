@@ -13,12 +13,20 @@ String name;
 class 2 (Endangered Animals)
 Due to their dwindling numbers, Rangers must record additional information about EndangeredAnimals:
 
-id
-name
-health
-Use constants to define options like "healthy", "ill", and "okay".
-age (an estimated guess by the ranger)
-Use constants to define options like "newborn", "young", or "adult".
+int id;
+String name;
+String health;
+
+Use constants to define options like "healthy", "ill", and "okay". <FINAL keyword>
+
+1.)  "healthy", "ill", and "okay". <FINAL keyword>
+2.)  "newborn", "young", or "adult". <FINAL keyword>
+
+
+String age (an estimated guess by the ranger);
+
+Use constants to define options like "newborn", "young", or "adult". <FINAL keyword>
+
 Each time an animal species of either category is seen, a Sighting must be reported:
 
 Sightings
