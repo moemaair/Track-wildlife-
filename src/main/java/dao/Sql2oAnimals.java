@@ -1,3 +1,5 @@
+package dao;
+
 import modal.Animals;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
@@ -5,7 +7,7 @@ import org.sql2o.Sql2oException;
 
 import java.util.List;
 
-public class Sql2oAnimals implements wildlifedao {
+public class Sql2oAnimals implements Animal {
     private Sql2o sql2o;
 
     public Sql2oAnimals(Sql2o sql2o) {
@@ -15,9 +17,8 @@ public class Sql2oAnimals implements wildlifedao {
     @Override
     public List<Animals> getAll() {
         try (Connection con = sql2o.open()) {
-            return (List<Animals>) con.createQuery("SELECT FROM * animals")
+            return (List<Animals>) con.createQuery("SELECT * FROM animals")
                     .executeAndFetch(Animals.class); //fetch list
-
         }
     }
 
