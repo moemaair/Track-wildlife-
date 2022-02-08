@@ -1,0 +1,50 @@
+{{> nav.hbs}}
+{{#partial "content"}}
+    <div class="animal d-flex flex-column">
+        <h4 class="w-50">Douglas Fir is going Down, Wild lions, tigers and other animal may go down as well
+            Help us conduct an Impact study by recording an animal, whenever it crosses your sight. Let's save the jungle
+        </h4>
+        <hr>
+        {{#if animals}}
+            {{#each animals}}
+                <h3>{{ name }}</h3>
+            {{/each}}
+        {{else}}
+            <p>no animals selected! </p> <hr>
+        {{/if}}
+        <hr>
+        <!-- Button trigger modal -->
+        <div type="button" class="btn btn-success mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Add Animal
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" >
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add an Animal</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- form -->
+                        <form action="/animals" method="post">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Animal Name</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder='Example : "white rhino"'>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{{/partial}}
+{{> layout.hbs}}
