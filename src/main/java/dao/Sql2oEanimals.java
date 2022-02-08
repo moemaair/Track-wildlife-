@@ -17,14 +17,14 @@ public class Sql2oEanimals implements Endangered {
     @Override
     public List<EndangeredAnimals> getAll() {
             try (Connection con = sql2o.open()) {
-                return (List<EndangeredAnimals>) con.createQuery("SELECT FROM * animals")
+                return (List<EndangeredAnimals>) con.createQuery("SELECT * FROM endangered_animals")
                         .executeAndFetch(EndangeredAnimals.class); //fetch list
             }
     }
 
     @Override
         public void add(EndangeredAnimals endangeredAnimals) {
-            String sql = "INSERT INTO endangered_animals (id, name, health, age) VALUES (:id, :name, :health, :age)";
+            String sql = "INSERT INTO endangered_animals (name, health, age) VALUES (:name, :health, :age)";
 
             try (Connection con = sql2o.open()){
                 int id = (int) con.createQuery(sql, true)
@@ -34,7 +34,7 @@ public class Sql2oEanimals implements Endangered {
                 endangeredAnimals.setId(id);
 
             } catch (Sql2oException ex) {
-                System.out.println("There was a problem adding the animals! ");
+                System.out.println("There was a problem adding the endangered Animals! ");
             }
         }
 
