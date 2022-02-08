@@ -1,6 +1,12 @@
+import org.sql2o.Connection;
+import org.sql2o.Sql2o;
+
+import java.util.List;
+
 public class Animals {
     int id;
     String name;
+
 
     public Animals(int id, String name) {
         this.id = id;
@@ -22,4 +28,6 @@ public class Animals {
     public void setName(String name) {
         this.name = name;
     }
+
 }
+
