@@ -1,7 +1,13 @@
-public class EndangeredAnimals extends Animals {
+package modal;
 
+import modal.Animals;
+
+public class EndangeredAnimals extends Animals {
+    public int id;
+    public String name;
     public String health;
     public int age;
+
     public static final String HEALTH_1 = "healthy";
     public static final String HEALTH_2 = "okay";
     public static final String HEALTH_3 = "ill";
@@ -14,7 +20,6 @@ public class EndangeredAnimals extends Animals {
         this.health = health;
         this.age = age;
     }
-
 
     public int getId() {
         return id;
