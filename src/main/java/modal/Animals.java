@@ -1,17 +1,14 @@
-import org.sql2o.Connection;
-import org.sql2o.Sql2o;
-
-import java.util.List;
+package modal;
 
 public class Animals {
-    int id;
-    String name;
+    private int id;
+    private String name;
 
-
-    public Animals(int id, String name) {
+    public Animals(String name) {
         this.id = id;
         this.name = name;
     }
+
 
     public int getId() {
         return id;
@@ -28,6 +25,5 @@ public class Animals {
     public void setName(String name) {
         this.name = name;
     }
-
 }
 

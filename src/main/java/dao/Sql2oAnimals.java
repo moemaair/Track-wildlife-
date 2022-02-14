@@ -17,14 +17,14 @@ public class Sql2oAnimals implements Animal {
     @Override
     public List<Animals> getAll() {
         try (Connection con = sql2o.open()) {
-            return (List<Animals>) con.createQuery("SELECT * FROM animals")
+            return con.createQuery("SELECT * FROM animals")
                     .executeAndFetch(Animals.class); //fetch list
         }
     }
 
     @Override
     public void add(Animals animals) {
-        String sql = "INSERT INTO animals (id, name) VALUES (:id, :name)";
+        String sql = "INSERT INTO animals (name) VALUES (:name)";
 
         try (Connection con = sql2o.open()){
             int id = (int) con.createQuery(sql, true)

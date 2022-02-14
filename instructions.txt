@@ -4,14 +4,14 @@ You have been asked to build an application that allows Rangers to track wildlif
 
 The application must track two categories of wildlife:
 
-class 1 (Animals)
+class 1 (modal.Animals)
 At the very least, require:
 
 int id;
 String name;
 
-class 2 (Endangered Animals)
-Due to their dwindling numbers, Rangers must record additional information about EndangeredAnimals:
+class 2 (Endangered modal.Animals)
+Due to their dwindling numbers, Rangers must record additional information about modal.EndangeredAnimals:
 
 int id;
 String name;
@@ -27,10 +27,10 @@ String age (an estimated guess by the ranger);
 
 Use constants to define options like "newborn", "young", or "adult". <FINAL keyword>
 
-Each time an animal species of either category is seen, a Sighting must be reported:
+Each time an animal species of either category is seen, a modal.Sightings must be reported:
 
 Sightings
-When wildlife is spotted, a Ranger submits a form to record a Sighting containing the following:
+When wildlife is spotted, a Ranger submits a form to record a modal.Sightings containing the following:
 
 id of Animal or EndangeredAnimal species
 location
@@ -48,7 +48,24 @@ Table Names:animals, sightings
 Setup Instructions
 In your README, include detailed setup instructions with all commands necessary to re-create your databases, columns, and tables (example below from To Do):
 
-In PSQL:
-CREATE DATABASE to_do;
-CREATE TABLE categories (id serial PRIMARY KEY, name varchar);
-CREATE TABLE tasks (id serial PRIMARY KEY, description varchar);
+
+
+
+
+ <select class="custom-select">
+                                        <option selected>Health..</option>
+                                        {{#if health }}
+                                            {{#each health as |h|}}
+                                                <option name="health" id = "health" value={{h}}>{{h}}</option>
+                                            {{/each}}
+                                        {{/if}}
+                                    </select>
+
+  <select class="custom-select" id="age" name="age">
+                                        <option selected>Age..</option>
+                                        {{#if age }}
+                                            {{#each age as |a|}}
+                                                <option name="age" id="age" value={{a}}>{{a}}</option>
+                                            {{/each}}
+                                        {{/if}}
+                                    </select>

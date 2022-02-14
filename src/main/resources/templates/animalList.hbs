@@ -1,9 +1,73 @@
+{{> nav.hbs}}
 {{#partial "content"}}
-    {{#if newAnimals}}
-        {{#each newAnimals}}
-            <h4>Animal name: {{ name }}</h4>
-        {{/each}}
-    {{/if}}
+<!--    <h4 class="text-center text-dark" style="margin:4rem auto;">ANIMALS DETAILS PAGE</h4>-->
+<div class="animalList">
+    <div class="animal-card-list d-flex ">
+        <div class="card w-50 mx-3 shadow-lg border " >
+            <div class="card-header " style="margin-top:5rem; background-color:#F8F9FA;">
+                <h5>Non-Extinct Animal</h5>
+            </div>
+            <div class="card-body p-4 shadow-lg">
+                <div class="card-text animal-data text-light">
+                    {{#if animals}}
+                        {{#each animals}}
+                            <p> {{ name }}</p>
+                        {{/each}}
+                    {{else}}
+                        <h4>no animals selected! </h4> <hr>
+                    {{/if}}
+                </div>
+                <a href="/new/animal" class="btn btn-primary">Add Non-Endangered Animal</a>
+            </div>
+        </div>
+        <div class="card w-50 mx-3 shadow-lg border " >
+            <div class="card-header " style="margin-top:5rem; background-color:#F8F9FA;">
+                <h5>Extinct Animal</h5>
+            </div>
+            <div class="card-body p-4">
+                <div class="card-text animal-data text-light">
+                    {{#if endangeredAnimals}}
+                        {{#each endangeredAnimals}}
+                            <p> Animal name {{ name }}</p>
+                            <p> Current Health {{ health }}</p>
+                            <p> Animal Age {{ age }}</p>
+                        {{/each}}
+                    {{else}}
+                        <h4>no Endangered animals selected! </h4> <hr>
+                    {{/if}}
+                </div>
+                <a href="/new/endangeredanimal" class="btn btn-primary"> Add Endangered Animals</a>
+            </div>
+        </div>
+    </div>
+    <div class="card w-75 mx-3 my-4 shadow-lg border" >
+        <div class="card-header " style="background-color:#F8F9FA;">
+            <h5>Sighting Recorded</h5>
+        </div>
+        <div class="card-body p-4">
+            <div class="card-text animal-data text-light ">
+                <section class="d-flex gap-3 flex-column">
+
+                    {{#if sightings}}
+                        {{#each sightings}}
+                            <p>Animal Sighted: {{ animal_name }}</p>
+                            <p>Ranger's Name: {{ ranger_name }}</p>
+                            <p>Sighted Location Zone: {{ locations }}</p> <hr>
+                        {{/each}}
+                    {{else}}
+                        <h4>no Sightings!</h4>
+                    {{/if}}
+                </section>
+
+            </div>
+            <a href="/new/sighting" class="btn btn-primary"> Add New Sightings</a>
+        </div>
+    </div>
+</div>
+
+
+
+
 {{/partial}}
 
 {{>layout.hbs}}

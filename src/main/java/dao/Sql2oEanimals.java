@@ -17,7 +17,7 @@ public class Sql2oEanimals implements Endangered {
     @Override
     public List<EndangeredAnimals> getAll() {
             try (Connection con = sql2o.open()) {
-                return (List<EndangeredAnimals>) con.createQuery("SELECT * FROM endangered_animals")
+                return con.createQuery("SELECT * FROM endangered_animals")
                         .executeAndFetch(EndangeredAnimals.class); //fetch list
             }
     }
