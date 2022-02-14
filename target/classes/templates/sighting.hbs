@@ -1,0 +1,52 @@
+{{> nav.hbs}}
+
+{{#partial "content"}}
+    <div class="animal sighting d-flex flex-column" >
+            <div class="alert alert-secondary" role="alert" style=" margin-top:4rem;">
+                Douglas Fir is going Down, Wild lions, tigers and other animal may go down as well
+                Help us conduct an Impact study by recording an animal, whenever it crosses your sight. Let's save the jungle
+            </div>
+
+        <!-- Button trigger modal -->
+        <div type="button" class="btn btn-success mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Report A  Sighting
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Report Sighting</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- form -->
+                        <form action="/sightings" method="post">
+                            <div class="mb-3">
+                                <label for="animal_name" class="form-label">Animal Name</label>
+                                <input type="text" class="form-control" name="animal_name" id="animal_name" placeholder='Example : "Lioness"'>
+                            </div>
+                            <div class="mb-3">
+                                <label for="ranger_name" class="form-label">Ranger's Name</label>
+                                <input type="text" class="form-control" id="ranger_name" name="ranger_name" placeholder='Example : "James Clear"'>
+                            </div>
+                            <div class="mb-3 ">
+                                <label for="location" class="form-label">Ranger's Name</label>
+                                <input type="text" class="form-control" id="location" name="location" placeholder='Example : "Zone A, "Zone B", "Zone C" '>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{{/partial}}
+{{> layout.hbs}}

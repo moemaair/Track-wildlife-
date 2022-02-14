@@ -1,0 +1,44 @@
+{{> nav.hbs}}
+{{#partial "content"}}
+
+    <div class="index d-flex flex-column">
+        <h2 class="p-2" style="color:black">i-TRACK WILDLIFE</h2>
+        <div class="infoAboutWeb d-flex gap-5">
+
+            <div class="card " style="width: 18rem; margin: 2rem 0;">
+                <img src="https://saveanimalsfacingextinction.org/wp-content/uploads/2015/06/elephant_thumb1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><b style="color:white">Animal</b></h5>
+                    <p class="card-text">Have you seen a non-Extinct animal anywhere? Write to us and will appreciate!</p>
+                    <a href="/new/animal" class="plus-icon bg-success rounded-pill p-3 shadow-lg">
+                        <i class="fas fa-plus"></i>
+                    </a>
+
+                </div>
+            </div>
+            <div class="card " style="width: 18rem; margin: 2rem 0;">
+                <img src="https://images.pexels.com/photos/7510169/pexels-photo-7510169.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><b style="color:white">Endangered Animals</b></h5>
+                    <p class="card-text">Have you seen an Extinct animal anywhere? Write to us and will appreciate!</p>
+                    <a href="/new/endangeredanimal" class="plus-icon bg-warning rounded-pill p-3 shadow-lg">
+                        <i class="fas fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="card " style="width: 18rem; margin: 2rem 0;">
+                <img src="https://www.careerstep.com/wp-content/uploads/2017/02/magnifying_glass.jpg" class="card-img-top border" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><b style="color:white">Animal Sightings</b></h5>
+                    <p class="card-text">Where have you seen these Animals? Can you record it for us? Save The Animals today!</p>
+                    <a href="/new/sighting" class="plus-icon bg-danger rounded-pill p-3 shadow-lg" >
+                        <i class="fas fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{{/partial}}
+{{> layout.hbs}}

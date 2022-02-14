@@ -1,0 +1,61 @@
+{{> nav.hbs}}
+{{#partial "myDiv"}}
+    <div class="d-flex flex-column ea " >
+        <div class="alert alert-secondary" role="alert" style=" margin-top:4rem;">
+            Douglas Fir is going Down, Wild lions, tigers and other animal may go down as well
+            Help us conduct an Impact study by recording an animal, whenever it crosses your sight. Let's save the jungle
+        </div>
+
+        <div class="d-flex flex-end p-2">
+            <img src="https://saveanimalsfacingextinction.org/wp-content/themes/wideeyecreative/images/safe-logo-2016.svg"
+                 style="width:200px">
+        </div>
+
+
+        <!-- Button trigger modal -->
+        <div type="button" class="btn btn-success btn-ea m-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Add EndangeredAnimal
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content mc-ea p-5">
+                    <div class="modal-header ">
+                        <h5 class="modal-title" id="exampleModalLabel">Add EndangeredAnimal</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <!-- form -->
+                        <form action="/Endangered" method="post">
+                            <div class="mb-3 text-dark">
+                                <label for="name" class="form-label">Endangered Animal Name</label>
+                                <input type="text" class="form-control" name="name" id="name" placeholder='Example : "Pallas Cat"'>
+                            </div>
+                            <div class="mb-3 text-dark">
+                                <label for="health" class="form-label">Endangered Animal health</label>
+                                <input type="text" class="form-control" name="health" id="health" placeholder='Example : "healthy", "ill", and "okay"'>
+                            </div>
+                            <div class="mb-3 text-dark">
+                                <label for="age" class="form-label">Endangered Animal Age</label>
+                                <input type="text" class="form-control" name="age" id="age" placeholder='Example : "newborn", "young", or "adult"'>
+                                </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary text-light">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+{{/partial}}
+
+{{> layout.hbs}}
